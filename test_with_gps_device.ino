@@ -27,7 +27,7 @@ void setup()
   Serial.print("Sizeof(gpsobject) = "); Serial.println(sizeof(TinyGPS));
   Serial.println();
   Serial.println("Sats HDOP Latitude Longitude Fix  Date       Time       Date Alt     Course Speed Card  Distance Course Card  Chars Sentences Checksum");
-  Serial.println("          (deg)    (deg)     Age                        Age  (m)     --- from GPS ----  ---- to London  ----  RX    RX        Fail");
+  Serial.println("          (deg)    (deg)     Age                        Age  (m)     --- from GPS ----  ---- to home  ----  RX    RX        Fail");
   Serial.println("--------------------------------------------------------------------------------------------------------------------------------------");
 }
 
