@@ -1,0 +1,6 @@
+have control over 3 servos and an "engine" in the servo channels
+communicate with a gps to deterimne position and travel direction 
+be able to path from a current location to another set location
+
+flying in 2d coordinate based system with 30 foot range around "point"
+use a wifi module with personal webpage code to upload coordinates
