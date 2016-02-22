@@ -1,19 +1,25 @@
+#include <TinyGPS.h>
+#include "Arduino.h"
+#include "GpsForPlane.h"
+
 /*
    GpsForPlane.cpp - handles GPS functions
    By Joy Smith and Cole Tucker
    All rights reserved, but none enforced.
  */
-#include <TinyGPS.h>
-#include "Arduino.h"
-#include "GpsForPlane.h"
-
-GpsForPlane::GpsForPlane(int pin)
+int _pinTX;
+int _pinRX;
+GpsForPlane::GpsForPlane(int pinTX, int pinRX)
 {
-  pinMode(pin, OUTPUT);
-  _pin = pin;
-  start();
+  pinMode(pinTX, OUTPUT);
+  pinMode(pinRX, OUTPUT);
+  _pinTX = pinTX;
+  _pinRX = pinRX;
+  initialize();
 }
-  String GpsForPlane::initialize(){
+String GpsForPlane::initialize(){
+   //Wifi communication.
+   Serial2.begin(115200);
    return ("GPS is initialized.");
 }
 String GpsForPlane::getStatus(){

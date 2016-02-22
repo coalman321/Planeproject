@@ -1,3 +1,5 @@
+#ifndef GpsForPlane_h
+#define GpsForPlane_h
 #include <TinyGPS.h>
 #include "Arduino.h"
 
@@ -14,8 +16,7 @@ TinyGPS gps;
 class GpsForPlane : public TinyGPS
 {
   public:
-     GpsForPlane(int pin);
-     String start();
+     GpsForPlane(int pinTX, int pinRX);
      String getStatus();
      String initialize();
   private:
