@@ -6,7 +6,6 @@
    By Joy Smith and Cole Tucker
    All rights reserved, but none enforced.
  */
-#include <SoftwareSerial.h>
 #include "Arduino.h"
 #include "GpsForPlane.h"
 
