@@ -1,11 +1,9 @@
-#include <TinyGPS.h>
-
-
 /*
    GpsForPlane.cpp - handles GPS functions
    By Joy Smith and Cole Tucker
    All rights reserved, but none enforced.
  */
+#include <TinyGPS.h>
 #include "Arduino.h"
 #include "GpsForPlane.h"
 
