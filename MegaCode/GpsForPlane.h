@@ -1,3 +1,5 @@
+#include <TinyGPS.h>
+
 /*
     GpsForPlane.h - Library for processing GPS
     Created by Joy Smith and Cole Tucker Feb. 2016
@@ -8,8 +10,6 @@
 
 #include "Arduino.h"
 #include <SoftwareSerial.h>
-#include <TinyGPS.h>
-
 TinyGPS gps;
 
 class GpsForPlane : public TinyGPS
@@ -18,9 +18,10 @@ class GpsForPlane : public TinyGPS
      GpsForPlane(int pin);
      String start();
      String getStatus();
+     String initialize();
   private:
      int _pin;
      
-}
+};
 
 #endif
