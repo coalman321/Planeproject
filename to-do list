@@ -5,3 +5,6 @@ replace servo pin with accelerometer for power and ground
 remove compass port on pcb
 
 FIRMWARE TO-DO
+Servo control commands
+Autonomous main sequence
+Communication between ESP and Mega
