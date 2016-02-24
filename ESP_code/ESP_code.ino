@@ -8,10 +8,9 @@
 const char WiFiAPPSK[] = "tuckersmith";
 
 //Pin Definitions
-const int GYRO_PIN = 5; // Gyro pin
-const int MOTOR_PIN = 2; // Motor pin
 String GPString = "";
 boolean planeGone = false;
+boolean gpsSet = false;
 
 WiFiServer server(80);
 
@@ -96,7 +95,7 @@ void loop()
   else if (val == 1)
   {
      s+= "<form action=\"demo_form.asp\">GPS: <input type=\"text\" name=\"GPS\" value=""><br><input type=\"submit\" value=\"Submit\">\"</form>";
-     
+     gpsSet = true;
   }
   else
   {
