@@ -4,3 +4,7 @@ be able to path from a current location to another set location
 flying in 2d coordinate based system with 30 foot range around "point"
 use a wifi module with personal webpage code to upload coordinates
 use wifi to know when to start
+
+
+airframe based on:
+http://flitetest.com/articles/FT_Bloody_Wonder_Scratch_Build
