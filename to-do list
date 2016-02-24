@@ -2,5 +2,6 @@ HARDWARE TO-DO
 build airframe 
 remove 1 servo pin 
 replace servo pin with accelerometer for power and ground 
+remove compass port on pcb
 
 FIRMWARE TO-DO
