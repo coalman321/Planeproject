@@ -1,0 +1,28 @@
+HARDWARE TO-DO
+build airframe 
+remove 1 servo pin 
+replace servo pin with accelerometer for power and ground 
+remove compass port on pcb
+
+FIRMWARE TO-DO
+Servo control commands
+Autonomous main sequence
+Communication between ESP and Mega
+Save HTML input for GPS
+
+PINS:
+LeftServo:
+RightServo:
+(?)RearServo:
+ESC:
+Gyro:
+
+OTHER:
+"PlaneAp" (Pass: tuckersmith)
+
+FROM MEGA:
+  Serial.begin(9600) == computer
+  Serial1.begin(9600) ==  GPS communication
+  Serial2.begin(115200) == ESP communication
+
+192.168.4.1    use: "/planeGo", "/setGPS", "/planeState"

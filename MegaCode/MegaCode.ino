@@ -3,13 +3,13 @@ GpsForPlane gpsForPlane(16,17);
 #include <Servo.h>
 
 //motors - handle with servo.write(speed)
-Servo servo1;
-Servo servo2;
-Servo servo3;
+Servo Servo1;
+Servo Servo2;
+Servo Servo3;
 
 //electronic speed controller (throttle)
 //handle with servo.writeMicroSec(speed) -(time high time low) (700 - 2000)
-Servo esc1;
+Servo ESC1;
 
 const int servo1pin = 1;
 const int servo2pin = 2;
@@ -38,10 +38,10 @@ void setup() {
    Serial1.begin(9600);
    //ESP communication
    Serial2.begin(115200);
-  Servo.attach(servo1pin); 
-  Servo.attach(servo2pin);
-  Servo.attach(servo3pin);
-  Servo.attach(escpin);
+  Servo1.attach(servo1pin); 
+  Servo2.attach(servo2pin);
+  Servo3.attach(servo3pin);
+  ESC1.attach(escpin);
 }
 
 void loop() {
