@@ -38,10 +38,10 @@ void setup() {
    Serial1.begin(9600);
    //ESP communication
    Serial2.begin(115200);
-  pinMode(servo1pin, OUTPUT);
-  pinMode(servo2pin, OUTPUT);
-  pinMode(servo3pin, OUTPUT);
-  pinMode(escpin, OUTPUT);
+  Servo.attach(servo1pin); 
+  Servo.attach(servo2pin);
+  Servo.attach(servo3pin);
+  Servo.attach(escpin);
 }
 
 void loop() {
