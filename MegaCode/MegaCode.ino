@@ -32,7 +32,7 @@ void bankLeft(){
 }
 
 void setup() {
-  //error reporting from the computer.
+  //error reporting to the computer.
    Serial.begin(9600);
    //Gps communication.
    Serial1.begin(9600);
