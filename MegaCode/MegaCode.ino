@@ -17,22 +17,42 @@ const int servo2pin = 2;
 const int escpin = 4;
 
 //stores the last value passed to each servo
-double servo1value = 0.0;
-double servo2value = 0.0;
-double servo3value = 0.0;
-double escValue = 0.0;
+int servo1value = 90;
+int servo2value = 90;
+//int servo3value = 0;
+int escValue = 700;
+//inputs 
+char* inputcoords;
+long gpsx;
+long gpsy;
+long imurotx;
+long bankleftval = 0.0; //set this before flight 
+long bankrightval = 0.0; //set this before flight
+long degtarget; // degrees til heading hits target value 
+long currentdeg;
+
 
 void readESP(){
-  
+  Serial2.read(inputcoords);
 }
 
 void bankLeft(){
-//roll left 
-//pull up on elevator untill heading maches heading to target
+Servo1.write(180);
+if(imurotx <= bankleftval){
+  Servo1.write(90); 
+  Servo2.write(180);
+  if(currentdeg >= degtarget)
+  Servo2.write(90);
+}
 }
 void bankRight(){
-//roll right 
-//pull up on elevator untill heading maches heading to target 
+Servo1.write(180);
+if(imurotx >= bankrightval){
+  Servo1.write(90); 
+  Servo2.write(180);
+  if(currentdeg >= degtarget)
+  Servo2.write(90);
+}
 }
 
 void setup() {
