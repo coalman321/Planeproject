@@ -28,6 +28,7 @@ long gpsy;
 long imurotx;
 long bankleftval = 0.0; //set this before flight 
 long bankrightval = 0.0; //set this before flight
+long bankcenter = 0.0; //set this before flight
 long degtarget; // degrees til heading hits target value 
 long currentdeg;
 
@@ -41,8 +42,13 @@ Servo1.write(180);
 if(imurotx <= bankleftval){
   Servo1.write(90); 
   Servo2.write(180);
-  if(currentdeg >= degtarget)
+  if(currentdeg >= degtarget){
   Servo2.write(90);
+  Servo1.write(0)
+    if(imurotx = bankcenter){
+    Servo1.write(90); 
+   }
+  }
 }
 }
 void bankRight(){
@@ -52,6 +58,11 @@ if(imurotx >= bankrightval){
   Servo2.write(180);
   if(currentdeg >= degtarget)
   Servo2.write(90);
+    Servo1.write(180)
+    if(imurotx = bankcenter){
+    Servo1.write(90);
+    }
+  }
 }
 }
 
