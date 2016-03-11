@@ -1,6 +1,6 @@
 #include <ESP8266WiFi.h>
 
-//update planeGo
+//update botGo
 //figure out how to read GPS String coordinates
 //figure out how to set servos, and what servos we're using
 
@@ -9,7 +9,7 @@ const char WiFiAPPSK[] = "tuckersmith";
 
 //Pin Definitions
 String GPString = "";
-boolean planeGone = false;
+boolean botGone = false;
 boolean gpsSet = false;
 
 WiFiServer server(80);
@@ -24,7 +24,7 @@ void setupWiFi()
   String macID = String(mac[WL_MAC_ADDR_LENGTH - 2], HEX) +
                  String(mac[WL_MAC_ADDR_LENGTH - 1], HEX);
    macID.toUpperCase();
-   String AP_NameString = "Plane Ap";
+   String AP_NameString = "bot Ap";
 
    char AP_NameChar[AP_NameString.length() + 1];
    memset(AP_NameChar, 0, AP_NameString.length() + 1);
@@ -42,14 +42,14 @@ void setup()
   server.begin();
 }
 
-void planeGo()
+void botGo()
 {
-  planeGone = true;
+  botGone = true;
 }
 
-void planeLand()
+void botLand()
 {
-  planeGone = false;
+  botGone = false;
 }
 
 void loop()
@@ -75,22 +75,22 @@ void loop()
   //match the request
   int val = -1; // We'll use 'val' to keep track of both the
                 // request type (read/set) and value if set.
-  if (req.indexOf("/planeGo") != -1)
+  if (req.indexOf("/botGo") != -1)
     val = 0; // Will write LED low
   else if (req.indexOf("/setGPS") != -1)
     val = 1; // Will print pin reads
-  else if (req.indexOf("/planeState") != -1)
+  else if (req.indexOf("/botState") != -1)
     val = -2;
 
   //add displays and call methods dependent on 
   if (val = -2)
   {
-    s += "Your plane is ";
-    s += (planeGone)?"gone.":"not gone.";
+    s += "Your bot is ";
+    s += (botGone)?"gone.":"not gone.";
   }
   else if (val == 0)
   { 
-    planeGo();
+    botGo();
   }
   else if (val == 1)
   {
@@ -99,7 +99,7 @@ void loop()
   }
   else
   {
-    s+= "Invalid request. \rPlease use:\r\t/planeGo\r\t/setGPS\r\t/planeState";
+    s+= "Invalid request. \rPlease use:\r\t/botGo\r\t/setGPS\r\t/botState";
   }
 
   //close

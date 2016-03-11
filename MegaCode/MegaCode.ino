@@ -1,5 +1,5 @@
-#include <GpsForPlane.h>;
-GpsForPlane gpsForPlane(16,17);
+#include <GpsForbot.h>;
+GpsForbot gpsForbot(16,17);
 #include <Servo.h>
 
 //motors - handle with servo.write(speed)
@@ -82,7 +82,7 @@ void setup() {
 void loop() {
   // put your main code here, to run repeatedly:
   //read ESP
-  //if planeGone, fly.
+  //if botGone, fly.
 }
 
 void fly() {
